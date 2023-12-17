@@ -1,4 +1,62 @@
-// this should also work, but does not: export * from '.';
+// charge point requests
+import { AuthorizeRequest } from "./Authorize";
+import { AuthorizeResponse } from "./AuthorizeResponse";
+import { BootNotificationRequest } from "./BootNotification";
+import { BootNotificationResponse } from "./BootNotificationResponse";
+import { CancelReservationRequest } from "./CancelReservation";
+import { CancelReservationResponse } from "./CancelReservationResponse";
+import { ChangeAvailabilityRequest } from "./ChangeAvailability";
+import { ChangeAvailabilityResponse } from "./ChangeAvailabilityResponse";
+import { ChangeConfigurationRequest } from "./ChangeConfiguration";
+import { ChangeConfigurationResponse } from "./ChangeConfigurationResponse";
+import { ClearCacheRequest } from "./ClearCache";
+import { ClearCacheResponse } from "./ClearCacheResponse";
+import { ClearChargingProfileRequest } from "./ClearChargingProfile";
+import { ClearChargingProfileResponse } from "./ClearChargingProfileResponse";
+import { DataTransferRequest } from "./DataTransfer";
+import { DataTransferResponse } from "./DataTransferResponse";
+import { DiagnosticsStatusNotificationRequest } from "./DiagnosticsStatusNotification";
+import { DiagnosticsStatusNotificationResponse } from "./DiagnosticsStatusNotificationResponse";
+import { FirmwareStatusNotificationRequest } from "./FirmwareStatusNotification";
+import { FirmwareStatusNotificationResponse } from "./FirmwareStatusNotificationResponse";
+import { GetCompositeScheduleRequest } from "./GetCompositeSchedule";
+import { GetCompositeScheduleResponse } from "./GetCompositeScheduleResponse";
+import { GetConfigurationRequest } from "./GetConfiguration";
+import { GetConfigurationResponse } from "./GetConfigurationResponse";
+import { GetDiagnosticsRequest } from "./GetDiagnostics";
+import { GetDiagnosticsResponse } from "./GetDiagnosticsResponse";
+import { GetLocalListVersionRequest } from "./GetLocalListVersion";
+import { GetLocalListVersionResponse } from "./GetLocalListVersionResponse";
+import { HeartbeatRequest } from "./Heartbeat";
+import { HeartbeatResponse } from "./HeartbeatResponse";
+import { MeterValuesRequest } from "./MeterValues";
+import { MeterValuesResponse } from "./MeterValuesResponse";
+import { RemoteStartTransactionRequest } from "./RemoteStartTransaction";
+import { RemoteStartTransactionResponse } from "./RemoteStartTransactionResponse";
+import { RemoteStopTransactionRequest } from "./RemoteStopTransaction";
+import { RemoteStopTransactionResponse } from "./RemoteStopTransactionResponse";
+import { ReserveNowRequest } from "./ReserveNow";
+import { ReserveNowResponse } from "./ReserveNowResponse";
+import { ResetRequest } from "./Reset";
+import { ResetResponse } from "./ResetResponse";
+import { SendLocalListRequest } from "./SendLocalList";
+import { SendLocalListResponse } from "./SendLocalListResponse";
+import { SetChargingProfileRequest } from "./SetChargingProfile";
+import { SetChargingProfileResponse } from "./SetChargingProfileResponse";
+import { StartTransactionRequest } from "./StartTransaction";
+import { StartTransactionResponse } from "./StartTransactionResponse";
+import { StatusNotificationRequest } from "./StatusNotification";
+import { StatusNotificationResponse } from "./StatusNotificationResponse";
+import { StopTransactionRequest } from "./StopTransaction";
+import { StopTransactionResponse } from "./StopTransactionResponse";
+import { TriggerMessageRequest } from "./TriggerMessage";
+import { TriggerMessageResponse } from "./TriggerMessageResponse";
+import { UnlockConnectorRequest } from "./UnlockConnector";
+import { UnlockConnectorResponse } from "./UnlockConnectorResponse";
+import { UpdateFirmwareRequest } from "./UpdateFirmware";
+import { UpdateFirmwareResponse } from "./UpdateFirmwareResponse";
+
+// this should also work| but does not: export * from '.';
 export * from "./Authorize";
 export * from "./AuthorizeResponse";
 export * from "./BootNotification";
@@ -55,3 +113,102 @@ export * from "./UnlockConnector";
 export * from "./UnlockConnectorResponse";
 export * from "./UpdateFirmware";
 export * from "./UpdateFirmwareResponse";
+
+export type chargePointAction =
+  | "Authorize"
+  | "BootNotification"
+  | "DataTransfer"
+  | "DiagnosticsStatusNotification"
+  | "FirmwareStatusNotification"
+  | "Heartbeat"
+  | "MeterValues"
+  | "StartTransaction"
+  | "StatusNotification"
+  | "StopTransaction";
+
+export type ChargePointRequests =
+  | AuthorizeRequest
+  | BootNotificationRequest
+  | DataTransferRequest
+  | DiagnosticsStatusNotificationRequest
+  | FirmwareStatusNotificationRequest
+  | HeartbeatRequest
+  | MeterValuesRequest
+  | StartTransactionRequest
+  | StatusNotificationRequest
+  | StopTransactionRequest;
+
+export type ChargePointResponses =
+  | AuthorizeResponse
+  | BootNotificationResponse
+  | DataTransferResponse
+  | DiagnosticsStatusNotificationResponse
+  | FirmwareStatusNotificationResponse
+  | HeartbeatResponse
+  | MeterValuesResponse
+  | StartTransactionResponse
+  | StatusNotificationResponse
+  | StopTransactionResponse;
+
+export type centralSystemAction =
+  | "CancelReservation"
+  | "ChangeAvailability"
+  | "ChangeConfiguration"
+  | "ClearCache"
+  | "ClearChargingProfile"
+  | "DataTransfer"
+  | "GetCompositeSchedule"
+  | "GetConfiguration"
+  | "GetDiagnostics"
+  | "GetLocalListVersion"
+  | "RemoteStartTransaction"
+  | "RemoteStopTransaction"
+  | "ReserveNow"
+  | "Reset"
+  | "SendLocalList"
+  | "SetChargingProfile"
+  | "TriggerMessage"
+  | "UnlockConnector"
+  | "UpdateFirmware";
+
+export type CentralSystemRequests =
+  | CancelReservationRequest
+  | ChangeAvailabilityRequest
+  | ChangeConfigurationRequest
+  | ClearCacheRequest
+  | ClearChargingProfileRequest
+  | DataTransferRequest
+  | GetCompositeScheduleRequest
+  | GetConfigurationRequest
+  | GetDiagnosticsRequest
+  | GetLocalListVersionRequest
+  | RemoteStartTransactionRequest
+  | RemoteStopTransactionRequest
+  | ReserveNowRequest
+  | ResetRequest
+  | SendLocalListRequest
+  | TriggerMessageRequest
+  | UnlockConnectorRequest
+  | UpdateFirmwareRequest
+  | SetChargingProfileRequest;
+
+export type CentralSystemResponses =
+  | CancelReservationResponse
+  | ChangeAvailabilityResponse
+  | ChangeConfigurationResponse
+  | ClearCacheResponse
+  | ClearChargingProfileResponse
+  | DataTransferResponse
+  | GetCompositeScheduleResponse
+  | GetConfigurationResponse
+  | GetDiagnosticsResponse
+  | GetLocalListVersionResponse
+  | RemoteStartTransactionResponse
+  | RemoteStopTransactionResponse
+  | ReserveNowResponse
+  | ResetResponse
+  | SendLocalListResponse
+  | TriggerMessageResponse
+  | UnlockConnectorResponse
+  | UpdateFirmwareResponse
+  | SetChargingProfileResponse;
