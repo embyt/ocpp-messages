@@ -1,0 +1,28 @@
+{
+  "name": "ocpp-types",
+  "version": "1.0.0",
+  "description": "TypeScript definitions for Open Charge Point Protocol (OCPP)",
+  "main": "",
+  "author": "Roman Morawek, embyt GmbH",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/embyt/ocpp-messages.git"
+  },
+  "bugs": {
+    "url": "https://github.com/embyt/ocpp-messages/issues"
+  },
+  "homepage": "https://github.com/embyt/ocpp-messages",
+  "keywords": [
+    "ocpp",
+    "ocpp types",
+    "@types ocpp",
+    "open charge point protocol",
+    "v1.6",
+    "v2.0"
+  ],
+  "devDependencies": {
+    "json-schema-to-typescript": "^13.1.1"
+  },
+  "scripts": {}
+}
