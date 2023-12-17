@@ -114,7 +114,7 @@ export * from "./UnlockConnectorResponse";
 export * from "./UpdateFirmware";
 export * from "./UpdateFirmwareResponse";
 
-export type chargePointAction =
+export type ChargePointAction =
   | "Authorize"
   | "BootNotification"
   | "DataTransfer"
@@ -150,7 +150,7 @@ export type ChargePointResponses =
   | StatusNotificationResponse
   | StopTransactionResponse;
 
-export type centralSystemAction =
+export type CentralSystemAction =
   | "CancelReservation"
   | "ChangeAvailability"
   | "ChangeConfiguration"
