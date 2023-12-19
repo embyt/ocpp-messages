@@ -7,6 +7,12 @@ This package provides TypeScript type declarations for the OCPP (Open Charge Poi
 - 1.6
 - 2.0.1
 
+## Installation
+
+```bash
+npm install --save-dev ocpp-messages
+```
+
 ## Usage
 
 Import the provided type definitions into your TypeScript project:
