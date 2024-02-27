@@ -126,7 +126,7 @@ export type ChargePointAction =
   | "StatusNotification"
   | "StopTransaction";
 
-export type ChargePointRequests =
+export type ChargePointRequest =
   | AuthorizeRequest
   | BootNotificationRequest
   | DataTransferRequest
@@ -138,7 +138,7 @@ export type ChargePointRequests =
   | StatusNotificationRequest
   | StopTransactionRequest;
 
-export type ChargePointResponses =
+export type ChargePointResponse =
   | AuthorizeResponse
   | BootNotificationResponse
   | DataTransferResponse
@@ -171,7 +171,7 @@ export type CentralSystemAction =
   | "UnlockConnector"
   | "UpdateFirmware";
 
-export type CentralSystemRequests =
+export type CentralSystemRequest =
   | CancelReservationRequest
   | ChangeAvailabilityRequest
   | ChangeConfigurationRequest
@@ -192,7 +192,7 @@ export type CentralSystemRequests =
   | UpdateFirmwareRequest
   | SetChargingProfileRequest;
 
-export type CentralSystemResponses =
+export type CentralSystemResponse =
   | CancelReservationResponse
   | ChangeAvailabilityResponse
   | ChangeConfigurationResponse
