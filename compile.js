@@ -11,73 +11,74 @@ const fs = require("fs");
 function extractLargeEnums(ts, propertyName) {
   const extractedTypes = [];
   const typeMap = new Map();
-  
+
   // Match inline union types - handles both single-line and multi-line formats
-  // Pattern matches: 
+  // Pattern matches:
   //   propertyName?: "value1" | "value2" ...;
   //   OR
   //   propertyName?:
   //     | "value1"
   //     | "value2" ...;
-  const enumPattern = /(\w+)\?:\s*\n?\s*((?:\|\s*)?(?:"[^"]+"\s*(?:\||;)\s*\n?\s*)*(?:"[^"]+"))\s*;/gs;
-  
+  const enumPattern =
+    /(\w+)\?:\s*\n?\s*((?:\|\s*)?(?:"[^"]+"\s*(?:\||;)\s*\n?\s*)*(?:"[^"]+"))\s*;/gs;
+
   let transformed = ts;
   let match;
   const matches = [];
-  
+
   // Collect all matches first (to avoid issues with string replacement during iteration)
   while ((match = enumPattern.exec(ts)) !== null) {
     matches.push({
       fullMatch: match[0],
       propName: match[1],
-      enumValues: match[2]
+      enumValues: match[2],
     });
   }
-  
+
   // Process each match
   for (const matchData of matches) {
     const { fullMatch, propName, enumValues } = matchData;
-    
+
     // Extract all quoted values
     const values = enumValues.match(/"[^"]+"/g);
     if (values && values.length > 3) {
       // Generate type name: capitalize first letter and add "EnumType" suffix
       const typeName = propName.charAt(0).toUpperCase() + propName.slice(1) + "EnumType";
-      
+
       // Format the enum type nicely
-      const formattedEnum = values.map((v, i) => 
-        i === 0 ? `\n  | ${v}` : `  | ${v}`
-      ).join('\n');
-      
+      const formattedEnum = values.map((v, i) => (i === 0 ? `\n  | ${v}` : `  | ${v}`)).join("\n");
+
       // Store extracted type if not already added
       if (!typeMap.has(typeName)) {
         extractedTypes.push(`export type ${typeName} =${formattedEnum};`);
         typeMap.set(typeName, true);
       }
-      
+
       // Replace inline enum with type reference
       const replacement = `${propName}?: ${typeName};`;
       transformed = transformed.replace(fullMatch, replacement);
     }
   }
-  
+
   // If we extracted any types, prepend them to the output
   if (extractedTypes.length > 0) {
-    const lines = transformed.split('\n');
-    const headerEndIndex = lines.findIndex((line, i) => i > 0 && line.trim() === '' && lines[i-1].includes('*/'));
-    
+    const lines = transformed.split("\n");
+    const headerEndIndex = lines.findIndex(
+      (line, i) => i > 0 && line.trim() === "" && lines[i - 1].includes("*/"),
+    );
+
     if (headerEndIndex !== -1) {
-      const header = lines.slice(0, headerEndIndex + 1).join('\n');
-      const rest = lines.slice(headerEndIndex + 1).join('\n');
-      transformed = header + '\n' + extractedTypes.join('\n\n') + '\n\n' + rest;
+      const header = lines.slice(0, headerEndIndex + 1).join("\n");
+      const rest = lines.slice(headerEndIndex + 1).join("\n");
+      transformed = header + "\n" + extractedTypes.join("\n\n") + "\n\n" + rest;
     } else {
       // Fallback: just prepend after first 6 lines
-      const header = lines.slice(0, 6).join('\n');
-      const rest = lines.slice(6).join('\n');
-      transformed = header + '\n\n' + extractedTypes.join('\n\n') + '\n\n' + rest;
+      const header = lines.slice(0, 6).join("\n");
+      const rest = lines.slice(6).join("\n");
+      transformed = header + "\n\n" + extractedTypes.join("\n\n") + "\n\n" + rest;
     }
   }
-  
+
   return transformed;
 }
 
@@ -110,8 +111,8 @@ fs.readdir(__dirname + "/schema/v2.0", function (err, files) {
   //listing all files using forEach
   files.forEach(function (file) {
     // Skip if not a JSON file
-    if (!file.endsWith('.json')) return;
-    
+    if (!file.endsWith(".json")) return;
+
     // Extract base name (e.g., "AuthorizeRequest" from "AuthorizeRequest.json" or "AuthorizeRequest_v1p0.json")
     const baseName = file.replace(/(_v1p0)?\.json$/, "");
     const filePath = `${__dirname}/schema/v2.0/${file}`;

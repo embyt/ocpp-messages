@@ -1,6 +1,6 @@
 {
   "name": "ocpp-messages",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "TypeScript definitions for Open Charge Point Protocol (OCPP)",
   "main": "",
   "author": "Roman Morawek, embyt GmbH",
