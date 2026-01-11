@@ -78,7 +78,7 @@ export interface EventDataType {
   /**
    * Actual value (_attributeType_ Actual) of the variable.
    *
-   * The Configuration Variable &lt;&lt;configkey-reporting-value-size,ReportingValueSize&gt;&gt; can be used to limit GetVariableResult.attributeValue, VariableAttribute.value and EventData.actualValue. The max size of these values will always remain equal.
+   * The Configuration Variable <<configkey-reporting-value-size,ReportingValueSize>> can be used to limit GetVariableResult.attributeValue, VariableAttribute.value and EventData.actualValue. The max size of these values will always remain equal.
    *
    *
    */
@@ -142,7 +142,7 @@ export interface EVSEType {
   /**
    * Identified_ Object. MRID. Numeric_ Identifier
    * urn:x-enexis:ecdm:uid:1:569198
-   * EVSE Identifier. This contains a number (&gt; 0) designating an EVSE of the Charging Station.
+   * EVSE Identifier. This contains a number (> 0) designating an EVSE of the Charging Station.
    *
    */
   id: number;

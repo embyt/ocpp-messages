@@ -3,6 +3,30 @@ const { compileFromFile } = require("json-schema-to-typescript");
 const fs = require("fs");
 
 /**
+ * Decode HTML entities in comments
+ * Converts HTML entities like &lt; &gt; &amp; etc. to their actual characters
+ * @param {string} ts - The generated TypeScript code
+ * @returns {string} - The transformed TypeScript code
+ */
+function decodeHtmlEntities(ts) {
+  const entities = {
+    "&lt;": "<",
+    "&gt;": ">",
+    "&amp;": "&",
+    "&quot;": '"',
+    "&apos;": "'",
+    "&#x27;": "'",
+    "&#x2F;": "/",
+    "&#39;": "'",
+    "&#47;": "/",
+  };
+
+  return ts.replace(/&[#\w]+;/g, (entity) => {
+    return entities[entity] || entity;
+  });
+}
+
+/**
  * Extract inline enum types with more than 3 values into named type aliases
  * @param {string} ts - The generated TypeScript code
  * @param {string} propertyName - The property name for generating type name
@@ -92,8 +116,10 @@ fs.readdir(__dirname + "/schema/v1.6", function (err, files) {
   files.forEach(function (file) {
     // compile from file
     compileFromFile(`${__dirname}/schema/v1.6/${file}`).then((ts) => {
+      // Decode HTML entities in comments
+      let transformedTs = decodeHtmlEntities(ts);
       // Extract large enums into named types
-      const transformedTs = extractLargeEnums(ts, file.replace(".json", ""));
+      transformedTs = extractLargeEnums(transformedTs, file.replace(".json", ""));
       fs.writeFileSync(`${__dirname}/v1.6/${file.replace(".json", ".d.ts")}`, transformedTs);
     });
     console.log(file);
@@ -128,8 +154,10 @@ fs.readdir(__dirname + "/schema/v2.0", function (err, files) {
     // compile from schema
     compile(schema, baseName)
       .then((ts) => {
+        // Decode HTML entities in comments
+        let cleanedTs = decodeHtmlEntities(ts);
         // Replace any remaining URN-based interface names with clean names
-        let cleanedTs = ts.replace(/export interface Urn\w+/g, `export interface ${baseName}`);
+        cleanedTs = cleanedTs.replace(/export interface Urn\w+/g, `export interface ${baseName}`);
         // Extract large enums into named types
         cleanedTs = extractLargeEnums(cleanedTs, baseName);
         fs.writeFileSync(`${__dirname}/v2.0/${baseName}.d.ts`, cleanedTs);

@@ -45,7 +45,7 @@ export interface EVSEType {
   /**
    * Identified_ Object. MRID. Numeric_ Identifier
    * urn:x-enexis:ecdm:uid:1:569198
-   * EVSE Identifier. This contains a number (&gt; 0) designating an EVSE of the Charging Station.
+   * EVSE Identifier. This contains a number (> 0) designating an EVSE of the Charging Station.
    *
    */
   id: number;

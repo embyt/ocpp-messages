@@ -8,7 +8,7 @@
 export interface CostUpdatedRequest {
   customData?: CustomDataType;
   /**
-   * Current total cost, based on the information known by the CSMS, of the transaction including taxes. In the currency configured with the configuration Variable: [&lt;&lt;configkey-currency, Currency&gt;&gt;]
+   * Current total cost, based on the information known by the CSMS, of the transaction including taxes. In the currency configured with the configuration Variable: [<<configkey-currency, Currency>>]
    *
    *
    */

@@ -78,7 +78,7 @@ export interface MeterValuesRequest {
   /**
    * Request_ Body. EVSEID. Numeric_ Identifier
    * urn:x-enexis:ecdm:uid:1:571101
-   * This contains a number (&gt;0) designating an EVSE of the Charging Station. ‘0’ (zero) is used to designate the main power meter.
+   * This contains a number (>0) designating an EVSE of the Charging Station. ‘0’ (zero) is used to designate the main power meter.
    *
    */
   evseId: number;

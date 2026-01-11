@@ -29,7 +29,7 @@ export interface NotifyEVChargingScheduleRequest {
   timeBase: string;
   chargingSchedule: ChargingScheduleType;
   /**
-   * The charging schedule contained in this notification applies to an EVSE. EvseId must be &gt; 0.
+   * The charging schedule contained in this notification applies to an EVSE. EvseId must be > 0.
    *
    */
   evseId: number;
@@ -122,7 +122,7 @@ export interface ChargingSchedulePeriodType {
 /**
  * Sales_ Tariff
  * urn:x-oca:ocpp:uid:2:233272
- * NOTE: This dataType is based on dataTypes from &lt;&lt;ref-ISOIEC15118-2,ISO 15118-2&gt;&gt;.
+ * NOTE: This dataType is based on dataTypes from <<ref-ISOIEC15118-2,ISO 15118-2>>.
  *
  */
 export interface SalesTariffType {

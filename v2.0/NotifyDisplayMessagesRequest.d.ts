@@ -34,7 +34,7 @@ export interface NotifyDisplayMessagesRequest {
    */
   messageInfo?: [MessageInfoType, ...MessageInfoType[]];
   /**
-   * The id of the &lt;&lt;getdisplaymessagesrequest,GetDisplayMessagesRequest&gt;&gt; that requested this message.
+   * The id of the <<getdisplaymessagesrequest,GetDisplayMessagesRequest>> that requested this message.
    *
    */
   requestId: number;
@@ -121,7 +121,7 @@ export interface EVSEType {
   /**
    * Identified_ Object. MRID. Numeric_ Identifier
    * urn:x-enexis:ecdm:uid:1:569198
-   * EVSE Identifier. This contains a number (&gt; 0) designating an EVSE of the Charging Station.
+   * EVSE Identifier. This contains a number (> 0) designating an EVSE of the Charging Station.
    *
    */
   id: number;
@@ -144,7 +144,7 @@ export interface MessageContentType {
   /**
    * Message_ Content. Language. Language_ Code
    * urn:x-enexis:ecdm:uid:1:570849
-   * Message language identifier. Contains a language code as defined in &lt;&lt;ref-RFC5646,[RFC5646]&gt;&gt;.
+   * Message language identifier. Contains a language code as defined in <<ref-RFC5646,[RFC5646]>>.
    *
    */
   language?: string;

@@ -15,7 +15,7 @@ export type CertificateSigningUseEnumType = "ChargingStationCertificate" | "V2GC
 export interface SignCertificateRequest {
   customData?: CustomDataType;
   /**
-   * The Charging Station SHALL send the public key in form of a Certificate Signing Request (CSR) as described in RFC 2986 [22] and then PEM encoded, using the &lt;&lt;signcertificaterequest,SignCertificateRequest&gt;&gt; message.
+   * The Charging Station SHALL send the public key in form of a Certificate Signing Request (CSR) as described in RFC 2986 [22] and then PEM encoded, using the <<signcertificaterequest,SignCertificateRequest>> message.
    *
    */
   csr: string;

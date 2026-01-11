@@ -129,14 +129,14 @@ export interface IdTokenInfoType {
    */
   cacheExpiryDateTime?: string;
   /**
-   * Priority from a business point of view. Default priority is 0, The range is from -9 to 9. Higher values indicate a higher priority. The chargingPriority in &lt;&lt;transactioneventresponse,TransactionEventResponse&gt;&gt; overrules this one.
+   * Priority from a business point of view. Default priority is 0, The range is from -9 to 9. Higher values indicate a higher priority. The chargingPriority in <<transactioneventresponse,TransactionEventResponse>> overrules this one.
    *
    */
   chargingPriority?: number;
   /**
    * ID_ Token. Language1. Language_ Code
    * urn:x-oca:ocpp:uid:1:569374
-   * Preferred user interface language of identifier user. Contains a language code as defined in &lt;&lt;ref-RFC5646,[RFC5646]&gt;&gt;.
+   * Preferred user interface language of identifier user. Contains a language code as defined in <<ref-RFC5646,[RFC5646]>>.
    *
    *
    */
@@ -153,7 +153,7 @@ export interface IdTokenInfoType {
   /**
    * ID_ Token. Language2. Language_ Code
    * urn:x-oca:ocpp:uid:1:569375
-   * Second preferred user interface language of identifier user. Don’t use when language1 is omitted, has to be different from language1. Contains a language code as defined in &lt;&lt;ref-RFC5646,[RFC5646]&gt;&gt;.
+   * Second preferred user interface language of identifier user. Don’t use when language1 is omitted, has to be different from language1. Contains a language code as defined in <<ref-RFC5646,[RFC5646]>>.
    *
    */
   language2?: string;
@@ -172,7 +172,7 @@ export interface MessageContentType {
   /**
    * Message_ Content. Language. Language_ Code
    * urn:x-enexis:ecdm:uid:1:570849
-   * Message language identifier. Contains a language code as defined in &lt;&lt;ref-RFC5646,[RFC5646]&gt;&gt;.
+   * Message language identifier. Contains a language code as defined in <<ref-RFC5646,[RFC5646]>>.
    *
    */
   language?: string;

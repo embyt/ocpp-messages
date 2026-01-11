@@ -61,14 +61,14 @@ export type CostKindEnumType = "CarbonDioxideEmission" | "RelativePricePercentag
 export interface RequestStartTransactionRequest {
   customData?: CustomDataType;
   /**
-   * Number of the EVSE on which to start the transaction. EvseId SHALL be &gt; 0
+   * Number of the EVSE on which to start the transaction. EvseId SHALL be > 0
    *
    */
   evseId?: number;
   groupIdToken?: IdTokenType;
   idToken: IdTokenType;
   /**
-   * Id given by the server to this start request. The Charging Station might return this in the &lt;&lt;transactioneventrequest, TransactionEventRequest&gt;&gt;, letting the server know which transaction was started for this request. Use to start a transaction.
+   * Id given by the server to this start request. The Charging Station might return this in the <<transactioneventrequest, TransactionEventRequest>>, letting the server know which transaction was started for this request. Use to start a transaction.
    *
    */
   remoteStartId: number;
@@ -249,7 +249,7 @@ export interface ChargingSchedulePeriodType {
 /**
  * Sales_ Tariff
  * urn:x-oca:ocpp:uid:2:233272
- * NOTE: This dataType is based on dataTypes from &lt;&lt;ref-ISOIEC15118-2,ISO 15118-2&gt;&gt;.
+ * NOTE: This dataType is based on dataTypes from <<ref-ISOIEC15118-2,ISO 15118-2>>.
  *
  */
 export interface SalesTariffType {

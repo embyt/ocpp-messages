@@ -46,13 +46,13 @@ export type MessageFormatEnumType = "ASCII" | "HTML" | "URI" | "UTF8";
 export interface TransactionEventResponse {
   customData?: CustomDataType;
   /**
-   * SHALL only be sent when charging has ended. Final total cost of this transaction, including taxes. In the currency configured with the Configuration Variable: &lt;&lt;configkey-currency,`Currency`&gt;&gt;. When omitted, the transaction was NOT free. To indicate a free transaction, the CSMS SHALL send 0.00.
+   * SHALL only be sent when charging has ended. Final total cost of this transaction, including taxes. In the currency configured with the Configuration Variable: <<configkey-currency,`Currency`>>. When omitted, the transaction was NOT free. To indicate a free transaction, the CSMS SHALL send 0.00.
    *
    *
    */
   totalCost?: number;
   /**
-   * Priority from a business point of view. Default priority is 0, The range is from -9 to 9. Higher values indicate a higher priority. The chargingPriority in &lt;&lt;transactioneventresponse,TransactionEventResponse&gt;&gt; is temporarily, so it may not be set in the &lt;&lt;cmn_idtokeninfotype,IdTokenInfoType&gt;&gt; afterwards. Also the chargingPriority in &lt;&lt;transactioneventresponse,TransactionEventResponse&gt;&gt; overrules the one in &lt;&lt;cmn_idtokeninfotype,IdTokenInfoType&gt;&gt;.
+   * Priority from a business point of view. Default priority is 0, The range is from -9 to 9. Higher values indicate a higher priority. The chargingPriority in <<transactioneventresponse,TransactionEventResponse>> is temporarily, so it may not be set in the <<cmn_idtokeninfotype,IdTokenInfoType>> afterwards. Also the chargingPriority in <<transactioneventresponse,TransactionEventResponse>> overrules the one in <<cmn_idtokeninfotype,IdTokenInfoType>>.
    *
    */
   chargingPriority?: number;
@@ -84,14 +84,14 @@ export interface IdTokenInfoType {
    */
   cacheExpiryDateTime?: string;
   /**
-   * Priority from a business point of view. Default priority is 0, The range is from -9 to 9. Higher values indicate a higher priority. The chargingPriority in &lt;&lt;transactioneventresponse,TransactionEventResponse&gt;&gt; overrules this one.
+   * Priority from a business point of view. Default priority is 0, The range is from -9 to 9. Higher values indicate a higher priority. The chargingPriority in <<transactioneventresponse,TransactionEventResponse>> overrules this one.
    *
    */
   chargingPriority?: number;
   /**
    * ID_ Token. Language1. Language_ Code
    * urn:x-oca:ocpp:uid:1:569374
-   * Preferred user interface language of identifier user. Contains a language code as defined in &lt;&lt;ref-RFC5646,[RFC5646]&gt;&gt;.
+   * Preferred user interface language of identifier user. Contains a language code as defined in <<ref-RFC5646,[RFC5646]>>.
    *
    *
    */
@@ -108,7 +108,7 @@ export interface IdTokenInfoType {
   /**
    * ID_ Token. Language2. Language_ Code
    * urn:x-oca:ocpp:uid:1:569375
-   * Second preferred user interface language of identifier user. Don’t use when language1 is omitted, has to be different from language1. Contains a language code as defined in &lt;&lt;ref-RFC5646,[RFC5646]&gt;&gt;.
+   * Second preferred user interface language of identifier user. Don’t use when language1 is omitted, has to be different from language1. Contains a language code as defined in <<ref-RFC5646,[RFC5646]>>.
    *
    */
   language2?: string;
@@ -161,7 +161,7 @@ export interface MessageContentType {
   /**
    * Message_ Content. Language. Language_ Code
    * urn:x-enexis:ecdm:uid:1:570849
-   * Message language identifier. Contains a language code as defined in &lt;&lt;ref-RFC5646,[RFC5646]&gt;&gt;.
+   * Message language identifier. Contains a language code as defined in <<ref-RFC5646,[RFC5646]>>.
    *
    */
   language?: string;

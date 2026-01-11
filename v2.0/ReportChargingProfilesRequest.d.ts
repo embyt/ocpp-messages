@@ -53,7 +53,7 @@ export type CostKindEnumType = "CarbonDioxideEmission" | "RelativePricePercentag
 export interface ReportChargingProfilesRequest {
   customData?: CustomDataType;
   /**
-   * Id used to match the &lt;&lt;getchargingprofilesrequest, GetChargingProfilesRequest&gt;&gt; message with the resulting ReportChargingProfilesRequest messages. When the CSMS provided a requestId in the &lt;&lt;getchargingprofilesrequest, GetChargingProfilesRequest&gt;&gt;, this field SHALL contain the same value.
+   * Id used to match the <<getchargingprofilesrequest, GetChargingProfilesRequest>> message with the resulting ReportChargingProfilesRequest messages. When the CSMS provided a requestId in the <<getchargingprofilesrequest, GetChargingProfilesRequest>>, this field SHALL contain the same value.
    *
    */
   requestId: number;
@@ -214,7 +214,7 @@ export interface ChargingSchedulePeriodType {
 /**
  * Sales_ Tariff
  * urn:x-oca:ocpp:uid:2:233272
- * NOTE: This dataType is based on dataTypes from &lt;&lt;ref-ISOIEC15118-2,ISO 15118-2&gt;&gt;.
+ * NOTE: This dataType is based on dataTypes from <<ref-ISOIEC15118-2,ISO 15118-2>>.
  *
  */
 export interface SalesTariffType {

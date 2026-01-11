@@ -21,7 +21,7 @@ export type ChargingLimitSourceEnumType = "EMS" | "Other" | "SO" | "CSO";
 export interface GetChargingProfilesRequest {
   customData?: CustomDataType;
   /**
-   * Reference identification that is to be used by the Charging Station in the &lt;&lt;reportchargingprofilesrequest, ReportChargingProfilesRequest&gt;&gt; when provided.
+   * Reference identification that is to be used by the Charging Station in the <<reportchargingprofilesrequest, ReportChargingProfilesRequest>> when provided.
    *
    */
   requestId: number;
@@ -56,7 +56,7 @@ export interface ChargingProfileCriterionType {
    */
   stackLevel?: number;
   /**
-   * List of all the chargingProfileIds requested. Any ChargingProfile that matches one of these profiles will be reported. If omitted, the Charging Station SHALL not filter on chargingProfileId. This field SHALL NOT contain more ids than set in &lt;&lt;configkey-charging-profile-entries,ChargingProfileEntries.maxLimit&gt;&gt;
+   * List of all the chargingProfileIds requested. Any ChargingProfile that matches one of these profiles will be reported. If omitted, the Charging Station SHALL not filter on chargingProfileId. This field SHALL NOT contain more ids than set in <<configkey-charging-profile-entries,ChargingProfileEntries.maxLimit>>
    *
    *
    *

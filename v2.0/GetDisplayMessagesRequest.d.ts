@@ -19,7 +19,7 @@ export type MessageStateEnumType = "Charging" | "Faulted" | "Idle" | "Unavailabl
 export interface GetDisplayMessagesRequest {
   customData?: CustomDataType;
   /**
-   * If provided the Charging Station shall return Display Messages of the given ids. This field SHALL NOT contain more ids than set in &lt;&lt;configkey-number-of-display-messages,NumberOfDisplayMessages.maxLimit&gt;&gt;
+   * If provided the Charging Station shall return Display Messages of the given ids. This field SHALL NOT contain more ids than set in <<configkey-number-of-display-messages,NumberOfDisplayMessages.maxLimit>>
    *
    *
    *
